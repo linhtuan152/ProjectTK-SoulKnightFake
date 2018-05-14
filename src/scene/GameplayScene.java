@@ -3,7 +3,7 @@ package scene;
 import Player.Player;
 import base.GameObjectManager;
 //import game.background.Background;
-//import game.enemy.EnemySqwaner;
+import Enemy.EnemySqwaner;
 //import game.player.Player;
 //import game.star.StarSqwaner;
 
@@ -18,7 +18,7 @@ public class GameplayScene  implements Scene {
     public void init() {
 //        GameObjectManager.instance.recycle(Background.class);
         this.setupPlayer();
-//        GameObjectManager.instance.recycle(EnemySqwaner.class);
+        GameObjectManager.instance.recycle(EnemySqwaner.class);
 //        GameObjectManager.instance.recycle(StarSqwaner.class).createAction();
     }
 
