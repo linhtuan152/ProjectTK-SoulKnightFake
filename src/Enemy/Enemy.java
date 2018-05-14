@@ -20,6 +20,13 @@ public class Enemy extends GameObject implements PhysicBody, HitObject{
     }
 
     @Override
+    public void run(){
+        super.run();
+        this.enemyMove.run(this);
+        this.boxCollider.position.set(this.position);
+    }
+
+    @Override
     public void getHit(GameObject gameObject) {
 
     }

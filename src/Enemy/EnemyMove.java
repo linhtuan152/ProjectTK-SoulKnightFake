@@ -12,6 +12,7 @@ public class EnemyMove {
         this.velocity = new Vector2D();
     }
 
+
     public void run (Enemy enemy) {
         Player player = GameObjectManager.instance.findPlayer();
         if (player != null) {
