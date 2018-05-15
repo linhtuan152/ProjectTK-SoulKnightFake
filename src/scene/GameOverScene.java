@@ -1,5 +1,6 @@
 package scene;
 
+import background.Background;
 import base.GameObjectManager;
 //import game.background.Background;
 //import game.star.StarSqwaner;
@@ -9,7 +10,7 @@ public class GameOverScene implements Scene {
 
     @Override
     public void init() {
-//        GameObjectManager.instance.recycle(Background.class);
+        GameObjectManager.instance.recycle(Background.class);
 //        GameObjectManager.instance.recycle(StarSqwaner.class).createAction();
     }
 

@@ -4,6 +4,7 @@ import Player.Player;
 import base.GameObjectManager;
 //import game.background.Background;
 import Enemy.EnemySqwaner;
+import javafx.scene.layout.Background;
 //import game.player.Player;
 //import game.star.StarSqwaner;
 
@@ -16,7 +17,7 @@ public class GameplayScene  implements Scene {
 
     @Override
     public void init() {
-//        GameObjectManager.instance.recycle(Background.class);
+        GameObjectManager.instance.recycle(background.Background.class);
         this.setupPlayer();
         GameObjectManager.instance.recycle(EnemySqwaner.class);
 //        GameObjectManager.instance.recycle(StarSqwaner.class).createAction();

@@ -28,11 +28,11 @@ public class Enemy extends GameObject implements PhysicBody, HitObject{
 
     @Override
     public void getHit(GameObject gameObject) {
-
+        this.isAlive = false;
     }
 
     @Override
     public BoxCollider getBoxCollider() {
-        return null;
+        return this.boxCollider;
     }
 }
