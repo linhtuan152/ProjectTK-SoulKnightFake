@@ -21,17 +21,18 @@ public class Player extends GameObject implements PhysicBody, HitObject{
 
     public Player(){
         this.position = new Vector2D();
-        this.renderer =new ImageRenderer("resources/image/player.jpg",50,50);
+        this.renderer =new ImageRenderer("resources/image/p1.png",60,60);
         this.playerMove = new PlayerMove();
         this.playerShoot = new PlayerShoot();
         this.runHitObject = new RunHitObject(Enemy.class);
-        this.boxCollider = new BoxCollider(50,50);
+        this.boxCollider = new BoxCollider(60,60);
     }
 
     @Override
     public void run(){
-        this.playerMove.run(this);
         this.playerShoot.run(this);
+        this.playerMove.run(this);
+
         this.boxCollider.position.set(this.position);
         this.runHitObject.run(this);
     }

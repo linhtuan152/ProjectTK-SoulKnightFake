@@ -15,7 +15,7 @@ public class Enemy extends GameObject implements PhysicBody, HitObject{
 
     public Enemy() {
         this.enemyMove = new EnemyMove();
-        this.renderer = new ImageRenderer("resources/image/monster-512.png",50,50);
+        this.renderer = new ImageRenderer("resources/image/mp.png",60,60);
         this.boxCollider = new BoxCollider(60,60);
     }
 

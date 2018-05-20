@@ -1,5 +1,6 @@
 import base.GameObjectManager;
 import input.KeyInput;
+import input.KeyboardInput;
 import scene.GameplayScene;
 import scene.SceneManager;
 
@@ -37,7 +38,7 @@ public class GameCanvas extends JPanel {
     public void runAll() {
         GameObjectManager.instance.runAll();
         SceneManager.instance.performChangeSceneIfNeeded();
-        KeyInput.instance.reset();
+        KeyboardInput.instance.update();
     }
 
 }

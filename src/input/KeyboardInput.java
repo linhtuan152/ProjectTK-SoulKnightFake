@@ -12,6 +12,8 @@ public class KeyboardInput implements KeyListener {
     private List<Boolean> keyPressed;
     private List<Boolean> keyTyped;
     private List<Boolean> keyReleased;
+    public List<Integer> multiKeyPressed;
+    public List<Integer> multiKeyReleased;
 
     private int NUMBER_KEY = 256;
 
@@ -19,6 +21,8 @@ public class KeyboardInput implements KeyListener {
         this.keyPressed = new ArrayList<>();
         this.keyTyped = new ArrayList<>();
         this.keyReleased = new ArrayList<>();
+        this.multiKeyPressed = new ArrayList <>();
+        this.multiKeyReleased = new ArrayList <>();
         for (int i = 0; i < NUMBER_KEY; i++) {
             this.keyPressed.add(false);
             this.keyTyped.add(false);
@@ -38,26 +42,36 @@ public class KeyboardInput implements KeyListener {
         return this.keyReleased.get(code);
     }
 
-    public void update() {
+    public boolean containMultipleKey(KeyEvent... keyEvents) {
+        return this.multiKeyPressed.contains(keyEvents);
+    }
+
+
+
+    public void  update() {
         for (int i = 0; i < NUMBER_KEY; i++) {
             this.keyPressed.set(i, false);
             this.keyTyped.set(i, false);
             this.keyReleased.set(i, false);
         }
+
     }
 
     @Override
     public void keyTyped(KeyEvent e) {
         this.keyTyped.set(e.getKeyCode(), true);
+
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
         this.keyPressed.set(e.getKeyCode(), true);
+        this.multiKeyPressed.add(e.getKeyCode());
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
         this.keyReleased.set(e.getKeyCode(), true);
+        this.multiKeyReleased.add(e.getKeyCode());
     }
 }
