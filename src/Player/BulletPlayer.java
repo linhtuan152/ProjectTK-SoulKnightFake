@@ -7,6 +7,7 @@ import physic.BoxCollider;
 import physic.HitObject;
 import physic.PhysicBody;
 import physic.RunHitObject;
+import renderer.AnimationRenderer;
 import renderer.ImageRenderer;
 
 import java.awt.*;
@@ -17,10 +18,11 @@ public class BulletPlayer extends GameObject implements PhysicBody, HitObject{
     public RunHitObject runHitObject;
     public Vector2D velocity;
 
+
     public BulletPlayer() {
         this.velocity = new Vector2D();
-        this.renderer = new ImageRenderer("resources/image/bullet.jpg",5,5);
-        this.boxCollider = new BoxCollider(5,5);
+        this.renderer = new ImageRenderer("resources/image/bullet.png",7,7);
+        this.boxCollider = new BoxCollider(7,7);
         this.runHitObject = new RunHitObject(Enemy.class);
     }
 
@@ -34,6 +36,7 @@ public class BulletPlayer extends GameObject implements PhysicBody, HitObject{
 
     @Override
     public void getHit(GameObject gameObject) {
+
         this.isAlive = false;
     }
 

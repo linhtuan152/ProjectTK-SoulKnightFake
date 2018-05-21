@@ -1,9 +1,11 @@
 package Enemy;
 
+import base.FrameCounter;
 import base.GameObject;
 import physic.BoxCollider;
 import physic.HitObject;
 import physic.PhysicBody;
+import renderer.AnimationRenderer;
 import renderer.ImageRenderer;
 
 import java.util.Random;
@@ -12,6 +14,12 @@ public class Enemy extends GameObject implements PhysicBody, HitObject{
 
     public EnemyMove enemyMove;
     public BoxCollider boxCollider;
+    public FrameCounter frameCounter;
+    public AnimationRenderer explodeAnimationRenderer = new AnimationRenderer(false,10,
+            "resources/image/explode1.png","resources/image/explode2.png",
+            "resources/image/explode3.png","resources/image/explode4.png",
+            "resources/image/explode5.png","resources/image/explode6.png");
+
 
     public Enemy() {
         this.enemyMove = new EnemyMove();
@@ -28,7 +36,9 @@ public class Enemy extends GameObject implements PhysicBody, HitObject{
 
     @Override
     public void getHit(GameObject gameObject) {
+        this.renderer = this.explodeAnimationRenderer;
         this.isAlive = false;
+
     }
 
     @Override
