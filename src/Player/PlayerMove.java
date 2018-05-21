@@ -48,37 +48,37 @@ public class PlayerMove  {
 //            player.renderer = this.leftanimationRenderer;
 //
 //        }
-        if (KeyboardInput.instance.multiKeyPressed.contains(KeyEvent.VK_LEFT)) {
-            int index = KeyboardInput.instance.multiKeyPressed.indexOf(KeyEvent.VK_LEFT);
-            KeyboardInput.instance.multiKeyPressed.remove(index);
-            this.angle = 180;
-            this.velocity.set((new Vector2D(5, 0)).rotate(this.angle));
-            player.renderer = this.leftanimationRenderer;
-        }
-
-        if (KeyboardInput.instance.multiKeyPressed.contains(KeyEvent.VK_RIGHT)) {
-            int index = KeyboardInput.instance.multiKeyPressed.indexOf(KeyEvent.VK_RIGHT);
-            KeyboardInput.instance.multiKeyPressed.remove(index);
-            this.angle = 0;
-            this.velocity.set((new Vector2D(5, 0)).rotate(this.angle));
-            player.renderer = this.rightanimationRenderer;
-        }
-
-        if (KeyboardInput.instance.multiKeyReleased.contains(KeyEvent.VK_LEFT)) {
-            int index = KeyboardInput.instance.multiKeyReleased.indexOf(KeyEvent.VK_LEFT);
-            KeyboardInput.instance.multiKeyPressed.remove(index);
-            this.angle = 180;
-            this.velocity.set(new Vector2D(0,0).rotate(this.angle));
-            player.renderer = this.leftanimationRenderer;
-        }
-
-        if (KeyboardInput.instance.multiKeyReleased.contains(KeyEvent.VK_RIGHT)) {
-            int index = KeyboardInput.instance.multiKeyReleased.indexOf(KeyEvent.VK_RIGHT);
-            KeyboardInput.instance.multiKeyPressed.remove(index);
-            this.angle = 0;
-            this.velocity.set(new Vector2D(0,0).rotate(this.angle));
-            player.renderer = this.rightanimationRenderer;
-        }
+//        if (KeyboardInput.instance.multiKeyPressed.contains(KeyEvent.VK_LEFT)) {
+//            int index = KeyboardInput.instance.multiKeyPressed.indexOf(KeyEvent.VK_LEFT);
+//            KeyboardInput.instance.multiKeyPressed.remove(index);
+//            this.angle = 180;
+//            this.velocity.set((new Vector2D(5, 0)).rotate(this.angle));
+//            player.renderer = this.leftanimationRenderer;
+//        }
+//
+//        if (KeyboardInput.instance.multiKeyPressed.contains(KeyEvent.VK_RIGHT)) {
+//            int index = KeyboardInput.instance.multiKeyPressed.indexOf(KeyEvent.VK_RIGHT);
+//            KeyboardInput.instance.multiKeyPressed.remove(index);
+//            this.angle = 0;
+//            this.velocity.set((new Vector2D(5, 0)).rotate(this.angle));
+//            player.renderer = this.rightanimationRenderer;
+//        }
+//
+//        if (KeyboardInput.instance.multiKeyReleased.contains(KeyEvent.VK_LEFT)) {
+//            int index = KeyboardInput.instance.multiKeyReleased.indexOf(KeyEvent.VK_LEFT);
+//            KeyboardInput.instance.multiKeyPressed.remove(index);
+//            this.angle = 180;
+//            this.velocity.set(new Vector2D(0,0).rotate(this.angle));
+//            player.renderer = this.leftanimationRenderer;
+//        }
+//
+//        if (KeyboardInput.instance.multiKeyReleased.contains(KeyEvent.VK_RIGHT)) {
+//            int index = KeyboardInput.instance.multiKeyReleased.indexOf(KeyEvent.VK_RIGHT);
+//            KeyboardInput.instance.multiKeyPressed.remove(index);
+//            this.angle = 0;
+//            this.velocity.set(new Vector2D(0,0).rotate(this.angle));
+//            player.renderer = this.rightanimationRenderer;
+//        }
 
 
 
@@ -90,26 +90,26 @@ public class PlayerMove  {
 //            int index = KeyboardInput.instance.multiKeyPressed.indexOf(KeyEvent.VK_DOWN);
 //            KeyboardInput.instance.multiKeyPressed.remove(index);
 //        }
-//        if (KeyboardInput.instance.getKeyPressed(KeyEvent.VK_LEFT)) {
-//            this.angle = 180;
-//            this.velocity.set((new Vector2D(5, 0)).rotate(this.angle));
-//            player.renderer = this.leftanimationRenderer;
-//        }
-//        if (KeyboardInput.instance.getKeyReleased(KeyEvent.VK_LEFT)) {
-//            this.velocity.set(0, 0);
-//        }
-//
-//        if (KeyboardInput.instance.getKeyPressed(KeyEvent.VK_RIGHT)) {
-//            this.angle = 0;
-//            this.velocity.set((new Vector2D(5, 0)).rotate(this.angle));
-//            player.renderer = this.rightanimationRenderer;
-//        }
-//        if (KeyboardInput.instance.getKeyReleased(KeyEvent.VK_RIGHT)) {
-//            this.velocity.set(0, 0);
-//        }
+        if (KeyboardInput.instance.getKeyPressed(KeyEvent.VK_LEFT)) {
+            this.angle = 180;
+            this.velocity.set((new Vector2D(4, 0)).rotate(this.angle));
+            player.renderer = this.leftanimationRenderer;
+        }
+        if (KeyboardInput.instance.getKeyReleased(KeyEvent.VK_LEFT)) {
+            this.velocity.set(0, 0);
+        }
+
+        if (KeyboardInput.instance.getKeyPressed(KeyEvent.VK_RIGHT)) {
+            this.angle = 0;
+            this.velocity.set((new Vector2D(4, 0)).rotate(this.angle));
+            player.renderer = this.rightanimationRenderer;
+        }
+        if (KeyboardInput.instance.getKeyReleased(KeyEvent.VK_RIGHT)) {
+            this.velocity.set(0, 0);
+        }
         if (KeyboardInput.instance.getKeyPressed(KeyEvent.VK_UP)) {
             this.angle = -90;
-            this.velocity.set((new Vector2D(5, 0)).rotate(this.angle));
+            this.velocity.set((new Vector2D(4, 0)).rotate(this.angle));
             player.renderer = this.rightanimationRenderer;
         }
         if (KeyboardInput.instance.getKeyReleased(KeyEvent.VK_UP)) {
@@ -118,7 +118,7 @@ public class PlayerMove  {
 
         if (KeyboardInput.instance.getKeyPressed(KeyEvent.VK_DOWN)) {
             this.angle = 90;
-            this.velocity.set((new Vector2D(5, 0)).rotate(this.angle));
+            this.velocity.set((new Vector2D(4, 0)).rotate(this.angle));
             player.renderer = this.leftanimationRenderer;
         }
         if (KeyboardInput.instance.getKeyReleased(KeyEvent.VK_DOWN)) {

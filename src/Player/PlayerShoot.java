@@ -11,20 +11,15 @@ public class PlayerShoot {
     public FrameCounter frameCounter;
 
     public PlayerShoot() {
-        this.frameCounter = new FrameCounter(2);
+        this.frameCounter = new FrameCounter(5);
     }
 
 
     public void run(Player player) {
-        if (KeyboardInput.instance.multiKeyPressed.contains(KeyEvent.VK_SPACE)) {
-            //KeyboardInput.instance.multiKeyPressed.removeIf(key -> key == KeyEvent.VK_SPACE);
-
             if (this.frameCounter.run()) {
-                int index = KeyboardInput.instance.multiKeyPressed.indexOf(KeyEvent.VK_SPACE);
-                KeyboardInput.instance.multiKeyPressed.remove(index);
                 BulletPlayer bulletPlayer = GameObjectManager.instance.recycle(BulletPlayer.class);
                 bulletPlayer.position.set(player.position);
-                Vector2D vector2D = new Vector2D(7, 0);
+                Vector2D vector2D = new Vector2D(5, 0);
                 Vector2D rotate = vector2D.rotate(player.playerMove.angle);
                 bulletPlayer.velocity.set(rotate);
                 bulletPlayer.run();
@@ -34,5 +29,3 @@ public class PlayerShoot {
 
 
     }
-
-}

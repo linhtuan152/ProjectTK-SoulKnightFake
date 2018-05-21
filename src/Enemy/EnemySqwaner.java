@@ -10,7 +10,7 @@ import java.util.Random;
 public class EnemySqwaner extends GameObject {
 
     private Random random = new Random();
-    private FrameCounter frameCounter = new FrameCounter(1500000000);
+    private FrameCounter frameCounter = new FrameCounter(150);
 
     @Override
     public void run() {
