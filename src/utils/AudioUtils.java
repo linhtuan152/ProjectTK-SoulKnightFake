@@ -9,11 +9,11 @@ import java.io.IOException;
 public class AudioUtils {
     public static AudioUtils instance = new AudioUtils();
 
-    private AudioUtils() {
+    public AudioUtils() {
 
     }
 
-    public Clip loadSound(String url) {
+    static public Clip loadSound(String url) {
         File soundFile = new File(url);
         try {
             AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(soundFile);
