@@ -1,4 +1,5 @@
 import base.GameObjectManager;
+import game.ViewPort;
 import input.KeyInput;
 import input.KeyboardInput;
 import scene.GameplayScene;
@@ -12,6 +13,7 @@ public class GameCanvas extends JPanel {
 
     private BufferedImage backBuffered;
     private Graphics graphics;
+    private ViewPort viewPort;
 
     public GameCanvas() {
         this.setSize(1024, 600);
@@ -21,7 +23,7 @@ public class GameCanvas extends JPanel {
     }
 
     private void setupBackBuffered() {
-        this.backBuffered = new BufferedImage(1024, 600, BufferedImage.TYPE_4BYTE_ABGR); //khoi tao object
+        this.backBuffered = new BufferedImage( 1024, 600, BufferedImage.TYPE_4BYTE_ABGR); //khoi tao object
         this.graphics = this.backBuffered.getGraphics();
     }
 
@@ -31,7 +33,7 @@ public class GameCanvas extends JPanel {
     }
 
     public void renderAll() {
-        GameObjectManager.instance.renderAll(this.graphics);
+        GameObjectManager.instance.renderAll(this.graphics, viewPort);
         this.repaint();
     }
 
@@ -40,5 +42,4 @@ public class GameCanvas extends JPanel {
         SceneManager.instance.performChangeSceneIfNeeded();
         KeyboardInput.instance.update();
     }
-
 }

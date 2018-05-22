@@ -1,5 +1,6 @@
 import input.KeyInput;
 import input.KeyboardInput;
+import map.Map;
 
 import javax.swing.*;
 import java.awt.event.WindowAdapter;
@@ -16,7 +17,9 @@ public class GameWindow extends JFrame {
         this.setupGameCanvas();
         this.eventKeyboard();
         this.windowEvent();
+        this.addPlatforms();
         this.setVisible(true);
+
     }
 
     private void setupGameCanvas() {
@@ -35,6 +38,11 @@ public class GameWindow extends JFrame {
                 System.exit(1);
             }
         });
+    }
+
+    private void addPlatforms() {
+        Map map = Map.load("resources/Map/Map TLU.json");
+        map.generate();
     }
 
     public void gameLoop() {

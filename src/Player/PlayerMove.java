@@ -22,24 +22,24 @@ public class PlayerMove  {
             "resources/image/t3.png");
 
     public void run(Player player){
-        this.handleEventKeyboard(player);
+//        this.handleEventKeyboard(player);
         this.checkPlayerMove(player);
     }
 
-    private void handleEventKeyboard(Player player){
-        if (player.position.x >= 995) {
-            KeyInput.instance.rightPressed = false;
-        }
-        if (player.position.x <= 20) {
-            KeyInput.instance.leftPressed = false;
-        }
-        if (player.position.y > 535) {
-            KeyInput.instance.downPressed = false;
-        }
-        if (player.position.y < 20) {
-            KeyInput.instance.upPressed = false;
-        }
-    }
+//    private void handleEventKeyboard(Player player){
+//        if (player.position.x >= 995) {
+//            KeyInput.instance.rightPressed = false;
+//        }
+//        if (player.position.x <= 20) {
+//            KeyInput.instance.leftPressed = false;
+//        }
+//        if (player.position.y > 535) {
+//            KeyInput.instance.downPressed = false;
+//        }
+//        if (player.position.y < 20) {
+//            KeyInput.instance.upPressed = false;
+//        }
+//    }
 
     private void checkPlayerMove(Player player){
 //        if (KeyInput.instance.leftPressed) {

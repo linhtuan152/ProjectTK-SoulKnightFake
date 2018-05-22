@@ -1,7 +1,9 @@
 package base;
 
 
+import game.ViewPort;
 import physic.BoxCollider;
+import physic.Physic;
 import physic.PhysicBody;
 
 import Player.Player;
@@ -9,6 +11,7 @@ import Player.Player;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class GameObjectManager {
 
@@ -23,7 +26,17 @@ public class GameObjectManager {
     }
 
     public void add(GameObject gameObject) {
-        this.tempList.add(gameObject);
+        //this.tempList.add(gameObject);
+        boolean duplicate = !list.stream()
+                .filter(object -> object == gameObject)
+                .collect(Collectors.toList())
+                .isEmpty();
+        if (!duplicate) {
+            tempList.add(gameObject);
+            if (gameObject instanceof PhysicBody) {
+                Physic.add((PhysicBody) gameObject);
+            }
+        }
     }
 
     public void runAll() {
@@ -34,11 +47,11 @@ public class GameObjectManager {
         this.tempList.clear();
     }
 
-    public void renderAll(Graphics graphics) {
+    public void renderAll(Graphics graphics, ViewPort viewPort) {
         this.list
                 .stream()
                 .filter(gameObject -> gameObject.isAlive)
-                .forEach(gameObject -> gameObject.render(graphics));
+                .forEach(gameObject -> gameObject.render(graphics, viewPort));
     }
 
     public <T extends GameObject> T recycle(Class<T> cls) {
@@ -53,7 +66,7 @@ public class GameObjectManager {
         } else {
             try {
                 gameObject = cls.newInstance();
-                this.add(gameObject);
+                this.tempList.add(gameObject);
             } catch (InstantiationException | IllegalAccessException e) {
                 e.printStackTrace();
                 return null;

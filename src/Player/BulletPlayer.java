@@ -44,4 +44,9 @@ public class BulletPlayer extends GameObject implements PhysicBody, HitObject{
     public BoxCollider getBoxCollider() {
         return this.boxCollider;
     }
+
+    @Override
+    public boolean isActive() {
+        return false;
+    }
 }

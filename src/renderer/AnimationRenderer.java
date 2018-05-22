@@ -34,6 +34,8 @@ public class AnimationRenderer implements Renderer {
         this(true, max, paths); //goi constructor phia tren
     }
 
+
+
     @Override
     public void render(Graphics graphics, Vector2D position) {
         if (this.disable) return;

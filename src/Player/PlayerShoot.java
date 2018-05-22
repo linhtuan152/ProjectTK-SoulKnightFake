@@ -5,19 +5,19 @@ import base.GameObjectManager;
 import base.Vector2D;
 import input.KeyboardInput;
 import utils.AudioUtils;
-import utils.Utils;
+
 
 import javax.sound.sampled.Clip;
+import javax.swing.event.CaretListener;
 import java.awt.event.KeyEvent;
 
 public class PlayerShoot {
     public FrameCounter frameCounter;
-    private Clip clip;
+    public Clip clip;
 
     public PlayerShoot() {
         this.frameCounter = new FrameCounter(5);
-        this.clip = AudioUtils.instance.loadSound("resources/sound/TINKER PEW PEW PEW (online-audio-converter.com).wav");
-
+        this.clip = AudioUtils.instance.loadSound("resources/audio/TINKER PEW PEW PEW (online-audio-converter.com).wav");
     }
 
 
@@ -29,9 +29,14 @@ public class PlayerShoot {
                 Vector2D rotate = vector2D.rotate(player.playerMove.angle);
                 bulletPlayer.velocity.set(rotate);
                 bulletPlayer.run();
+//                if (player.isAlive){
+//                    this.clip.loop(1);
+//                    this.clip.start();
+//                }
+//                else { this.clip.stop();}
+
+
                 this.frameCounter.reset();
-                this.clip.loop(1);
-                this.clip.isRunning();
             }
         }
 

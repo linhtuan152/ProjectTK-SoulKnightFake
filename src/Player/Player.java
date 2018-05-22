@@ -13,12 +13,15 @@ import renderer.ImageRenderer;
 import scene.GameOverScene;
 import scene.SceneManager;
 
+import javax.sound.sampled.Clip;
+
 public class Player extends GameObject implements PhysicBody, HitObject{
 
     public BoxCollider boxCollider;
     public RunHitObject runHitObject;
     public PlayerMove playerMove;
     public PlayerShoot playerShoot;
+
 //    public AnimationRenderer explodeAnimationRenderer = new AnimationRenderer(false,10,
 //            "resources/image/explode1.png","resources/image/explode2.png",
 //            "resources/image/explode3.png","resources/image/explode4.png",
@@ -49,10 +52,16 @@ public class Player extends GameObject implements PhysicBody, HitObject{
 //        this.renderer = this.explodeAnimationRenderer;
         this.isAlive = false;
 //        SceneManager.instance.changeScene(new GameOverScene());
+
     }
 
     @Override
     public BoxCollider getBoxCollider() {
         return this.boxCollider;
+    }
+
+    @Override
+    public boolean isActive() {
+        return false;
     }
 }

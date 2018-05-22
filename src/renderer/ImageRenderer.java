@@ -51,6 +51,12 @@ public class ImageRenderer implements Renderer {
         this.frameCounter = new FrameCounter(timeInterval);
     }
 
+    public ImageRenderer(BufferedImage path) {
+        this.image = path;
+        this.width = this.image.getWidth();
+        this.height = this.image.getHeight();
+    }
+
     private void fillColorImage() {
         for (int i = 0; i < this.image.getWidth(); i++) {
             for (int j = 0; j < this.image.getHeight(); j++) {
