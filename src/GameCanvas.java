@@ -28,7 +28,7 @@ public class GameCanvas extends JPanel {
     private void setupBackBuffered() {
         this.backBuffered = new BufferedImage( 2048, 1200, BufferedImage.TYPE_4BYTE_ABGR); //khoi tao object
         this.viewPort = new ViewPort();
-        this.viewPort.getFollowOffset().add(1024/2, 600/2);
+        this.viewPort.getFollowOffset().set(1024/2, 600/2);
         this.graphics = this.backBuffered.getGraphics();
     }
 

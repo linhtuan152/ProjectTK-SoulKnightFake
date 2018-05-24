@@ -47,7 +47,7 @@ public class GameWindow extends JFrame {
     }
 
     private void addPlatforms() {
-        Map map = Map.load("resources/Map/MAP TLU.json");
+        Map map = Map.load("resources/Map/MAP TLU pro.json");
         map.generate();
     }
 //    private void addplayer(){
