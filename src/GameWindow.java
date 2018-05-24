@@ -1,3 +1,6 @@
+import Player.Player;
+import base.GameObject;
+import base.GameObjectManager;
 import input.KeyInput;
 import input.KeyboardInput;
 import map.Map;
@@ -10,6 +13,7 @@ public class GameWindow extends JFrame {
 
     private GameCanvas gameCanvas;
     private long lastTime = 0;
+    private Player player;
 
     public GameWindow() {
         // set size cho window
@@ -18,12 +22,14 @@ public class GameWindow extends JFrame {
         this.eventKeyboard();
         this.windowEvent();
         this.addPlatforms();
+//        this.addplayer();
         this.setVisible(true);
 
     }
 
     private void setupGameCanvas() {
         this.gameCanvas = new GameCanvas();
+        this.player = new Player();
         this.add(this.gameCanvas);
     }
 
@@ -41,9 +47,14 @@ public class GameWindow extends JFrame {
     }
 
     private void addPlatforms() {
-        Map map = Map.load("resources/Map/Map TLU.json");
+        Map map = Map.load("resources/Map/Map TLU pro.json");
         map.generate();
     }
+//    private void addplayer(){
+//        player = new Player();
+//        player.position.set(120, 100);
+//        GameObjectManager.instance.add(player);
+//    }
 
     public void gameLoop() {
         while (true) {

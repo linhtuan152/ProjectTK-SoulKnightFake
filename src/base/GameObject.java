@@ -22,6 +22,8 @@ public class GameObject {
     public GameObject() {
         this.position = new Vector2D();
         this.actions = new ArrayList<>();
+        this.viewPort = new ViewPort();
+
     }
 
     public void run() {
@@ -30,12 +32,12 @@ public class GameObject {
 
     public void render(Graphics graphics, ViewPort viewPort) {
         if (this.renderer == null) return;
-        this.renderer.render(graphics, this.position);
+        this.renderer.render(graphics, viewPort.translate(this.position));
 
-//        if (this.renderer != null){
-//            renderer.render(graphics, viewPort.translate(this.screenPosition));
-//        }
-    }
+//        if (this.renderer == null) return;
+//            this.renderer.render(graphics, viewPort.translate(this.screenPosition));
+        }
+
 
     public void addAction(Action action) {
         this.actions.add(action);

@@ -18,8 +18,8 @@ public class Enemy extends GameObject implements PhysicBody, HitObject{
 
     public Enemy() {
         this.enemyMove = new EnemyMove();
-        this.renderer = new ImageRenderer("resources/image/mp.png",40,40);
-        this.boxCollider = new BoxCollider(40,40);
+        this.renderer = new ImageRenderer("resources/image/mp.png",30,30);
+        this.boxCollider = new BoxCollider(30,30);
     }
 
     @Override
