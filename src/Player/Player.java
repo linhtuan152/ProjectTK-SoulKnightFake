@@ -11,6 +11,7 @@ import physic.RunHitObject;
 import renderer.AnimationRenderer;
 import renderer.ImageRenderer;
 import scene.GameOverScene;
+import scene.GameplayScene;
 import scene.SceneManager;
 
 import javax.sound.sampled.Clip;
@@ -22,6 +23,7 @@ public class Player extends GameObject implements PhysicBody, HitObject{
     public PlayerMove playerMove;
     public PlayerShoot playerShoot;
 
+
 //    public AnimationRenderer explodeAnimationRenderer = new AnimationRenderer(false,10,
 //            "resources/image/explode1.png","resources/image/explode2.png",
 //            "resources/image/explode3.png","resources/image/explode4.png",
@@ -31,18 +33,17 @@ public class Player extends GameObject implements PhysicBody, HitObject{
 
     public Player(){
         this.position = new Vector2D();
-        this.renderer =new ImageRenderer("resources/image/p1.png",60,60);
+        this.renderer = new ImageRenderer("resources/image/p1.png",30,30);
         this.playerMove = new PlayerMove();
         this.playerShoot = new PlayerShoot();
         this.runHitObject = new RunHitObject(Enemy.class);
-        this.boxCollider = new BoxCollider(60,60);
+        this.boxCollider = new BoxCollider(30,30);
     }
 
     @Override
     public void run(){
         this.playerShoot.run(this);
         this.playerMove.run(this);
-
         this.boxCollider.position.set(this.position);
         this.runHitObject.run(this);
     }

@@ -4,6 +4,10 @@ public class Vector2D {
 
     public float x;
     public float y;
+    public static final Vector2D ZERO = new Vector2D(0,0);
+    public static final Vector2D ONE = new Vector2D(1,1);
+    public static final Vector2D DOWN = new Vector2D(0,1);
+    public static final Vector2D UP = new Vector2D(0,-1);
 
     public Vector2D(float x, float y) {
         this.x = x;
@@ -85,5 +89,10 @@ public class Vector2D {
         float sin = (float) Math.sin(radian);
         float cos = (float) Math.cos(radian);
         return new Vector2D(this.x * cos - this.y * sin, this.x * sin + this.y * cos);
+    }
+
+
+    public Vector2D clone() {
+        return new Vector2D(x, y);
     }
 }

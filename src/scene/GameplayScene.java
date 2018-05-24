@@ -10,9 +10,9 @@ import javafx.scene.layout.Background;
 
 public class GameplayScene  implements Scene {
 
-    private void setupPlayer() {
+    public void setupPlayer() {
         Player player = GameObjectManager.instance.recycle(Player.class);
-        player.position.set(200, 200);
+        player.position.set(200, 300);
     }
 
     @Override
